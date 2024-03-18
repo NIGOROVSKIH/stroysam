@@ -26,7 +26,22 @@ html, body {
 .balance-image-container {
     display: inline-block; /* Чтобы изображение не занимало всю строку */
     vertical-align: middle; /* Выравнивание по вертикали */
-  }
+  } 
+
+.balance-image-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.balance-image {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 
 /* Стили для изображения */
 .balance-image {
