@@ -1,21 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Проверяем, была ли страница уже перезагружена
-    if (!localStorage.getItem('pageReloaded')) {
-        // Устанавливаем флаг перезагрузки страницы
-        localStorage.setItem('pageReloaded', 'true');
-        // Устанавливаем задержку в 2 секунды перед перезагрузкой страницы
-        setTimeout(function() {
-            window.location.reload();
-        }, 4000);
-    } else {
-        // Удаляем флаг после перезагрузки, чтобы при следующем посещении страницы процесс повторился
-        localStorage.removeItem('pageReloaded');
-    }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
     // Проверяем, была ли смена изображения
     if (localStorage.getItem('imageChanged') === 'true') {
         // Если да, меняем src для изображения
