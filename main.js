@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Устанавливаем задержку в 2 секунды перед перезагрузкой страницы
         setTimeout(function() {
             window.location.reload();
-        }, 2000);
+        }, 4000);
     } else {
         // Удаляем флаг после перезагрузки, чтобы при следующем посещении страницы процесс повторился
         localStorage.removeItem('pageReloaded');
