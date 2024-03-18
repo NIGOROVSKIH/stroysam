@@ -39,6 +39,13 @@ html, body {
 /* Стили для контейнера с изображением и кнопкой */
 .centered-container {
     text-align: center;
+} 
+
+  .centered-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .centered-image {
@@ -226,6 +233,13 @@ html, body {
     padding-right: 10px;
     color: #ffffffea; /* Цвет текста */
   }
+
+  .balance-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
   /* Медиа-запросы для баланса и изображения */
 @media screen and (max-width: 480px) {
