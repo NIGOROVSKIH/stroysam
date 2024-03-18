@@ -1,0 +1,214 @@
+
+
+body {
+    background: linear-gradient(125deg, rgb(12, 20, 34) 0%, rgb(40, 12, 12) 100%);
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap')
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Занимает всю высоту видимой области */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+    touch-action: manipulation;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+.sky-container {
+
+  transform: rotateZ(45deg);
+  position: absolute;
+  z-index: 1;
+}
+
+.star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+    filter: drop-shadow(0 0 5px #2557bb);
+    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  }
+
+  .star::before, .star::after {
+    position: absolute;
+    content: '';
+    top: calc(100% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), hsl(201, 95%, 35%), rgba(0, 0, 255, 0));
+    border-radius: 100%;
+    transform: translateX(50%) rotateZ(45deg);
+    animation: shining 3000ms ease-in-out infinite;
+  }
+
+  .star::after {
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+
+  .star:nth-child(1) {
+    top: calc(40% - 100px);
+    left: calc(80% - 300px);
+    animation-delay: 1650ms;
+  }
+  .star:nth-child(1)::before, .star:nth-child(1)::after {
+    animation-delay: 1650ms;
+  }
+
+  .star:nth-child(2) {
+    top: calc(60% - -50px);
+    left: calc(60% - 190px);
+    animation-delay: 350ms;
+  }
+
+  .star:nth-child(2)::before, .star:nth-child(2)::after {
+    animation-delay: 350ms;
+  }
+
+  .star:nth-child(3) {
+    top: calc(45% - -90px);
+    left: calc(30% - 200px);
+    animation-delay: 400ms;
+  }
+  .star:nth-child(3)::before, .star:nth-child(3)::after {
+    animation-delay: 4 00ms;
+  }
+  
+  .star:nth-child(4) {
+    top: calc(70% - 50px);
+    left: calc(30% - 250px);
+    animation-delay: 4700ms;
+  }
+  .star:nth-child(4)::before, .star:nth-child(4)::after {
+    animation-delay: 4700ms;
+  }
+
+  .star:nth-child(5) {
+    top: calc(75% - -190px);
+    left: calc(16% - 200px);
+    animation-delay: 2100ms;
+  }
+  .star:nth-child(5)::before, .star:nth-child(5)::after {
+    animation-delay: 2100ms;
+  }
+
+  /* Animations */
+@keyframes tail {
+    0% {
+      width: 0;
+    }
+    
+    30% {
+      width: 100px;
+    }
+    
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes shooting {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(135px);
+    }
+  }
+
+.task-heading {
+    font-size: 3em;
+    animation: fadeIn 2.5s ease-out;
+    margin-top: 20px;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.square-block {
+    width: 320px; /* Немного увеличиваем ширину блока */
+    height: 100px;
+    background-color: #f5efef23; /* Прозрачный белый фон */
+    border: 2px solid hwb(0 0% 100% / 0.034); /* Цвет рамки блока */
+    border-radius: 10px; /* Закругленные углы блока */
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    z-index: 999;
+}
+
+.square-block img {
+    width: 50px; /* Ширина изображения */
+    margin-left: 10px; /* Отступ слева */
+}
+
+.square-block .text-container {
+    padding: 20px;
+    text-align: center;
+    
+}  
+
+.task-heading {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-family: "Rubik", sans-serif;
+}
+
+
+.square-block .main-text {
+    font-size: 11px;
+    color: rgb(156, 163, 100);
+}
+
+.square-block .sub-text {
+    font-size: 14px;
+    color: hwb(0 94% 6% / 0.706);
+    font-family: "Rubik", sans-serif;
+}
+.square-block.inactive {
+    background-color: #7575750e; /* Серый цвет фона для неактивной кнопки */
+    pointer-events: none; /* Убираем возможность взаимодействия */
+    cursor: default; /* Курсор по умолчанию, чтобы не показывать, что можно нажать */
+}
+
+.footer-text {
+    position: fixed; /* Фиксируем элемент */
+    bottom: 20px; /* Отступ снизу */
+    left: 50%; /* Позиционируем по центру горизонтально */
+    transform: translateX(-35%); /* Сдвигаем влево на половину ширины элемента */
+    color: #ffffff36; /* Цвет текста */
+    font-size: 11px; /* Размер шрифта */
+    font-family: "Rubik", sans-serif; /* Шрифт */
+}
+
+
+
+
+
+
+

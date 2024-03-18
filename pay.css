@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body {
+    background: radial-gradient(circle at center, rgb(40, 40, 36), black); /* Градиент с золотым кругом по центру */
+    background-size: 400% 400%;
+    font-family: Poppins;
+    color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+/* Анимация неонового градиентного фона */
+@keyframes neonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.top-text {
+    position: absolute;
+    top: 90px; /* Выберите желаемое значение отступа сверху */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7); /* Прозрачный белый цвет */
+    font-family: 'Poppins', sans-serif; /* Используйте ваш шрифт */
+    font-size: 11px;
+}
+
+
+.centered-top-image {
+    position: absolute;
+    top: 100px; /* Выберите желаемое значение отступа сверху */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%; /* Сделайте изображение адаптивным */
+    height: auto;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input-container {
+    text-align: center;
+}
+
+.input-field {
+    width: 300px; /* Ширина поля ввода */
+    height: 50px; /* Высота поля ввода */
+    border: none; /* Убираем границы */
+    border-radius: 25px; /* Задаем полукруглую форму */
+    padding: 10px; /* Отступы внутри поля ввода */
+    text-align: center; /* Выравниваем текст по центру */
+    font-size: 12px; /* Размер шрифта */
+    background-color: rgba(255, 255, 255, 0.1); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+
+
+/* Стили для нового элемента отображения баланса */
+.balance-display {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    margin-top: 14  0px; /* Больший отступ сверху */
+    font-size: 38px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: hwb(0 100% 0%); /* Цвет текста */
+    width: 100%; /* Ширина элемента */
+    position: absolute; /* Фиксированная позиция */
+    top: 100px; /* Отступ сверху */
+    left: 0; /* Выравнивание по левому краю */
+}
+
+.submit-button {
+    width: 100px; /* Ширина кнопки */
+    height: 40px; /* Высота кнопки */
+    font-size: 16px; /* Размер шрифта */
+    background-color: rgb(77, 156, 2); /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем границы */
+    border-radius: 10px; /* Задаем скругленные углы */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Цвет фона кнопки при наведении */
+}
+
+.centered-image {
+    position: fixed;
+    bottom: 10px; /* Выберите желаемый отступ снизу */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 20%; /* Сделайте изображение адаптивным */
+    height: auto;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+
+.balance-display {
+    animation: shake 1.5s infinite; /* Анимация тряски будет повторяться бесконечно */
+}
+
+
+
+.refresh-text {
+    color: #ffffff19;
+    font-size: 8px;
+    margin-top: 10px; /* добавляем отступ сверху */
+    font-family: 'Poppins', sans-serif; /* Применяем шрифт Poppins */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!-- Мета-теги -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Заголовок страницы -->
+        <title>Добыча</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div id="waitMessage" class="hidden">Подождите..</div>
+
+        <div class="balance-wrapper">
+            <!-- Контейнер изображения -->
+            <div class="balance-image-container">
+                <!-- Изображение -->
+                <img src="tether.png" alt="Маленькое изображение" class="balance-image">
+            </div>
+        <!-- Контейнер для баланса -->
+        <div class="balance-container">
+            <p>0</p>
+        </div>
+
+        <!-- Основной контейнер -->
+        <div class="centered-container">
+            <!-- Изображение -->
+            <div class="centered-image">
+                <img src="photo_2024-03-18_13-11-54-transformed.png" alt="Ваше изображение">
+            </div>
+            <!-- Меню -->
+            <div class="menu-container">
+                <!-- Кнопки меню -->
+                <div class="menu-button image1">🎒</div>
+                <div class="divider"></div>
+                <div class="menu-button image2">🔋</div>
+                <div class="divider"></div>
+                <div class="menu-button image3">📮</div>
+
+            </div>
+        </div>
+
+        <!-- Контейнер для прогресс-бара (изначально скрыт) -->
+        <div class="progress-bar-container hidden">
+            <div class="progress-bar"></div>
+        </div>
+
+        <!-- Подключение скриптов -->
+        <script src="main.js"></script>
+    </body>
+    </html>

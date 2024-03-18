@@ -1,0 +1,304 @@
+/* Импорт шрифта */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Braah+One&family=Konkhmer+Sleokchher&family=Ramabhadra&display=swap');
+
+/* Общие стили для страницы */
+body {
+    background: radial-gradient(circle at center, rgb(40, 40, 36), black); /* Градиент с золотым кругом по центру */
+    /* Остальные стили остаются без изменений */
+    font-family: "Konkhmer Sleokchher", system-ui;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    touch-action: manipulation;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+
+/* Стили для контейнера изображения */
+.balance-image-container {
+    display: inline-block; /* Чтобы изображение не занимало всю строку */
+    vertical-align: middle; /* Выравнивание по вертикали */
+  }
+
+/* Стили для изображения */
+.balance-image {
+    width: 50px; /* Начальная ширина изображения, можно настроить под ваш дизайн */
+    height: auto; /* Высота автоматически подстроится под ширину */
+  }
+
+
+
+/* Стили для контейнера с изображением и кнопкой */
+.centered-container {
+    text-align: center;
+}
+
+.centered-image {
+    display: inline-block;
+    margin-bottom: 0px; /* Добавляем отступ между изображением и кнопкой */
+}
+
+.centered-image img {
+    max-width: 50%;
+    max-height: 50%;
+    display: inline-block;
+    transition: transform 0.2s ease; /* Добавляем плавную анимацию */
+}
+
+@media (max-width: 768px) { /* Медиа-запрос для экранов меньше 768px (типичный размер для мобильных устройств) */
+    .centered-image img {
+        margin-top: 10px; 
+        max-width: 90%; /* Уменьшаем максимальную ширину изображения до 80% ширины родительского элемента */
+        max-height: auto; /* Сбрасываем максимальную высоту для сохранения пропорций */
+    }
+}
+
+
+/* Стили для круглой кнопки */
+.rounded-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: blue;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.button-text {
+    color: white;
+    font-weight: bold;
+}
+
+/* Анимация тряски изображения */
+.shake-image {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Стили для контейнера прогресс-бара */
+.progress-bar-container {
+    position: fixed;
+    right: 0;
+    left: 65px;
+    bottom: 20px;
+    width: 65%;
+    height: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: #0f0;
+    border-radius: 10px 0 0 10px;
+    animation: progress-animation 10s linear;
+    box-shadow: 0 0 15px #0f0, 0 0 15px #0f0 inset; /* Добавляем неоновый эффект */
+    animation-fill-mode: forwards; /* Анимация закончится на последнем ключевом кадре и останется там */
+    animation-play-state: paused; /* Начнёт анимацию, когда будет активирована */
+}
+
+/* Стили для мобильных устройств */
+@media screen and (max-width: 480px) {
+    .progress-bar-container {
+        height: 10px; /* Уменьшаем высоту */
+        border-radius: 5px; /* Меньший радиус границы */
+        bottom: -20px; /* Меньшее расстояние от нижнего края */
+    }
+}
+
+/* Стили для планшетов */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .progress-bar-container {
+        height: 15px; /* Средняя высота */
+        border-radius: 7px; /* Средний радиус границы */
+        bottom: 15px; /* Среднее расстояние от нижнего края */
+    }
+}
+
+/* Стили для десктопов, тут мы оставляем исходные размеры, указанные вами */
+@media screen and (min-width: 769px) {
+    .progress-bar-container {
+        /* Ваши исходные стили */
+        height: 20px;
+        border-radius: 10px;
+        bottom: 20px;
+    }
+}
+
+
+@keyframes progress-animation {
+    0% { width: 100%; }
+    100% { width: 0; }
+}
+
+/* Стили для скрытого элемента */
+.hidden {
+    display: none;
+}
+
+/* Стили для контейнера меню */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Стили для контейнера меню */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative; /* Для позиционирования разделителей */
+}
+
+/* Стили для кнопок меню */
+.menu-button {
+    padding: 30px 45px; /* Задаем паддинги для размера кнопок */
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для кнопок */
+    color: white; /* Цвет текста кнопок */
+    cursor: pointer; /* Курсор в виде руки, указывающий на возможность клика */
+    position: relative; /* Относительное позиционирование для абсолютно позиционированных детей */
+    display: flex; /* Использование flexbox для выравнивания контента */
+    align-items: center; /* Центрирование по вертикали внутри кнопки */
+    justify-content: center; /* Центрирование по горизонтали внутри кнопки */
+    flex-shrink: 0; /* Предотвращаем сжатие кнопок при уменьшении экрана */
+}
+
+
+/* Стили для разделителей */
+.menu-button:not(:last-child)::after {
+    content: '';
+    height: 50%; /* Высота разделителя */
+    width: 1px; /* Ширина разделителя */
+    background-color: #ffffff0e; /* Цвет разделителя */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 0; /* Располагаем разделитель с правой стороны кнопки */
+    top: 50%; /* Центрируем разделитель по вертикали */
+    transform: translateY(-50%); /* Смещаем разделитель на половину его высоты вверх для центрирования */
+}
+
+/* Остальные стили без изменений */
+
+
+
+
+.menu-button:not(:last-child) {
+    border-right: 2px solid transparent;
+}
+
+.menu-button:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.menu-button:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/* Стили для контейнера баланса */
+.balance-container {
+    display: inline-block; /* Чтобы текст с балансом был в той же строке, что и изображение */
+    vertical-align: middle; /* Выравнивание по вертикали */
+    font-size: 2rem; /* Размер шрифта баланса, можно настроить */
+    margin-left: 0px; /* Отступ слева от изображения */
+    padding-right: 10px;
+    color: #ffffffea; /* Цвет текста */
+  }
+
+  /* Медиа-запросы для баланса и изображения */
+@media screen and (max-width: 480px) {
+    .balance-image {
+      width: 50px; /* Уменьшенная ширина изображения на мобильных */
+      padding-top: 7px;
+      padding-right: 10px;
+    }
+    .balance-container {
+      font-size: 2rem; /* Уменьшенный размер шрифта на мобильных */
+    }
+  }
+  
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .balance-image {
+      width: 40px; /* Промежуточная ширина изображения на планшетах */
+    }
+    .balance-container {
+      font-size: 1.75rem; /* Промежуточный размер шрифта на планшетах */
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .balance-image {
+      width: 50px; /* Ширина изображения для десктопов */
+    }
+    .balance-container {
+      font-size: 2rem; /* Размер шрифта для десктопов */
+    }
+  }
+
+/* Стили для абзаца с балансом */
+.balance-container p {
+    margin: -15px; /* Убираем внешние отступы у абзаца */
+}
+
+/* Стили для баланса и изображения */
+.balance-wrapper {
+    text-align: center; /* Центрирование содержимого */
+    padding: 20px; /* Отступы вокруг блока */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 70px; /* Перемещаем вверх страницы */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Коррекция позиционирования на половину ширины элемента */
+  }
+
+@keyframes squeeze {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05, 0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .squeeze-animation {
+    animation: squeeze 0.5s ease;
+  }
+
+  #waitMessage {
+    position: fixed; /* Фиксированное позиционирование */
+    font-family: Arial, Helvetica, sans-serif;
+    top: 30px;
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%);
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 0 0 10px 10px; /* Скругление углов снизу */
+    color: hwb(0 100% 0% / 0.118); /* Цвет текста */
+    z-index: 1000; /* Убедитесь, что надпись видна над другими элементами */
+    display: none; /* Изначально скрыто */
+}
+
