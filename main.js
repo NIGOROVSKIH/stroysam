@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Попытка расширить веб-приложение на весь экран
-    if (Telegram.WebApp) {
+    if (window.Telegram && window.Telegram.WebApp) {
+        Telegram.WebApp.ready();
         Telegram.WebApp.expand();
     }
+});
+
     
 document.addEventListener("DOMContentLoaded", function() {
     // Проверяем, была ли смена изображения
