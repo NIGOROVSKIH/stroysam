@@ -34,7 +34,7 @@ var submitButton = document.querySelector('.submit-button');
 
 // Добавляем обработчик события для клика по кнопке "Отправить"
 submitButton.addEventListener('click', function() {
-    if (lastBalance >= 200.00) {
+    if (lastBalance >= 20000.00) {
         // Обнуляем баланс в localStorage
         localStorage.setItem('balance', '0');
 
