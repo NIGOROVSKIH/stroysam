@@ -1,35 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Функция для проверки, является ли устройство мобильным
-    function isMobileDevice() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        return /iPhone|iPad|iPod|Android/i.test(userAgent);
-    }
-
-    // Выполняем код ниже только если это мобильное устройство
-    if (isMobileDevice()) {
-        // Здесь размещайте весь ваш остальной код, который должен выполняться только на мобильных устройствах
-        // Например:
-        if (!localStorage.getItem('pageReloaded')) {
-            localStorage.setItem('pageReloaded', 'true');
-            setTimeout(function() {
-                window.location.reload();
-            }, 2000);
-        } else {
-            localStorage.removeItem('pageReloaded');
-        }
-
-        // Продолжение вашего кода, адаптированного для мобильных устройств...
-    } else {
-        // Опционально: здесь можно разместить код, который выполнится, если устройство НЕ мобильное
-        console.log("Доступ разрешен только с мобильных устройств.");
-    }
-});
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
     if (window.Telegram && window.Telegram.WebApp) {
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
