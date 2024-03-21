@@ -19,6 +19,23 @@ body {
     touch-action: manipulation;
 }
 
+.back-button-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    
+    color: hwb(0 100% 0% / 0.417); /* Цвет текста */
+    padding: 10px 5px; /* Внутренние отступы */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    border-radius: 5px; /* Скругляем углы */
+    font-family: 'Poppins', sans-serif; /* Шрифт */
+    transition: background-color 0.3s ease; /* Анимация фона */ 
+    
+
 html, body {
     overflow: hidden;
 }
@@ -39,7 +56,7 @@ html, body {
 /* Стили для заголовка */
 .boost-title {
     font-size: 36px;
-    margin-top: 50px;
+    margin-top: 60px;
     /* Анимация отскока */
     animation: bounce 2s infinite;
 }
