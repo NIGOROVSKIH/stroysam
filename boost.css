@@ -27,7 +27,6 @@ body {
 
 .back-button {
     display: inline-block;
-    
     color: hwb(0 100% 0% / 0.417); /* Цвет текста */
     padding: 10px 5px; /* Внутренние отступы */
     text-decoration: none; /* Убираем подчеркивание текста */
