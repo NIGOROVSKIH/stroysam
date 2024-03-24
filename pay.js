@@ -1,12 +1,14 @@
-
-// Инициализация Telegram Web Apps API и настройка кнопки "Назад"
 if (window.Telegram) {
+    console.log("Telegram WebApp API is ready.");
     Telegram.WebApp.ready();
     Telegram.WebApp.MainButton.setText('Назад');
     Telegram.WebApp.MainButton.show();
     Telegram.WebApp.MainButton.onClick(() => {
-        window.history.back(); // Или перенаправьте пользователя обратно на главную страницу
+        console.log("Back button clicked.");
+        window.history.back(); // Или перенаправьте пользователя обратно на главную страницу.
     });
+} else {
+    console.log("Telegram WebApp API is not available.");
 }
 // Получаем последнее сохраненное значение баланса из localStorage
 var lastBalance = localStorage.getItem('balance');
