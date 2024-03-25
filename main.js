@@ -108,11 +108,14 @@ document.querySelector('.menu-button').addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", function() {
     var menuButtons = document.querySelectorAll('.menu-button');
     menuButtons.forEach(function(button) {
-        if (button.innerText === "🔋") {
-            button.addEventListener('click', function() {
+        button.addEventListener('click', function(event) {
+            var targetElement = event.target;
+            var isBatteryButton = targetElement.classList.contains('image2') ||
+                                  targetElement.closest('.menu-button').classList.contains('image2');
+            if (isBatteryButton) {
                 window.location.href = 'boost.html';
-            });
-        }
+            }
+        });
     });
 });
 
