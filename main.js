@@ -150,34 +150,43 @@ document.querySelector('.centered-container').addEventListener('click', function
 
 document.addEventListener("DOMContentLoaded", function() {
     var centeredContainer = document.querySelector('.centered-container');
-    var tapWords = ['Мел', 'Дай', 'Деньги']; // Массив слов для повторяющегося порядка
+    var imageSources = ['bomba.png', 'ledi.png', 'candy.webp']; // Пути к вашим маленьким изображениям
 
     centeredContainer.addEventListener('click', function(event) {
-        // Создаем элемент для слова
-        var tapText = document.createElement('div');
-        var currentWord = tapWords.shift(); // Получаем первое слово из массива
-        tapWords.push(currentWord); // Перемещаем первое слово в конец массива
-        tapText.textContent = currentWord;
-        tapText.classList.add('tap-text');
+        // Создаем элемент для изображения
+        var tapImage = document.createElement('img');
+        var currentImage = imageSources.shift(); // Получаем первое изображение из массива
+        imageSources.push(currentImage); // Перемещаем первое изображение в конец массива
+        tapImage.src = currentImage;
+        tapImage.classList.add('tap-image');
 
-        // Добавляем стили для слова
-        tapText.style.position = 'absolute';
-        tapText.style.top = event.clientY + 'px';
-        tapText.style.left = event.clientX + 'px';
+        // Добавляем стили для изображения
+        tapImage.style.top = event.clientY + 'px';
+        tapImage.style.left = event.clientX + 'px';
 
-        // Добавляем слово в контейнер
-        document.body.appendChild(tapText);
+        // Добавляем случайное направление движения
+        var randomAngle = Math.random() * 360; // Случайный угол поворота
+        var randomDistance = Math.random() * 200 + 250; // Случайное расстояние
 
-        // Добавляем класс анимации для слова
-        tapText.classList.add('fly-up');
+        // Запускаем анимацию для изображения
+        tapImage.animate([
+            { opacity: 0.5, transform: 'translateY(0) rotate(0deg)' },
+            { opacity: 0, transform: `translateY(-${randomDistance}px) rotate(${randomAngle}deg)` }
+        ], {
+            duration: 2000, // Продолжительность анимации в миллисекундах
+            easing: 'ease', // Сглаживание анимации
+            fill: 'forwards' // Анимация останется на последнем кадре после завершения
+        });
 
-        // Через некоторое время убираем слово
+        // Добавляем изображение в контейнер
+        document.body.appendChild(tapImage);
+
+        // Через некоторое время убираем изображение
         setTimeout(function() {
-            document.body.removeChild(tapText);
+            document.body.removeChild(tapImage);
         }, 2000);
     });
 });
-
 
 
 
