@@ -1,12 +1,10 @@
 /* Импорт шрифта */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Braah+One&family=Konkhmer+Sleokchher&family=Ramabhadra&display=swap');
 
-/* Общие стили для страницы */
 body {
-    background: radial-gradient(circle at center, rgb(40, 40, 36), black); /* Градиент с золотым кругом по центру */
-    /* Остальные стили остаются без изменений */
+    background: radial-gradient(circle at center, rgb(40, 40, 36), black);
+   
     font-family: "Konkhmer Sleokchher", system-ui;
     color: white;
     display: flex;
@@ -21,70 +19,40 @@ html, body {
     overflow: hidden;
 }
 
-
-/* Стили для контейнера изображения */
 .balance-image-container {
-    display: inline-block; /* Чтобы изображение не занимало всю строку */
-    vertical-align: middle; /* Выравнивание по вертикали */
-  } 
-
-.balance-image-container {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.balance-image {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-
-/* Стили для изображения */
-.balance-image {
-    width: 50px; /* Начальная ширина изображения, можно настроить под ваш дизайн */
-    height: auto; /* Высота автоматически подстроится под ширину */
+    display: inline-block;
+    vertical-align: middle;
   }
 
+.balance-image {
+    width: 50px;
+    height: auto;
+  }
 
-
-/* Стили для контейнера с изображением и кнопкой */
 .centered-container {
     text-align: center;
-} 
-
-  .centered-container {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .centered-image {
     display: inline-block;
-    margin-bottom: 0px; /* Добавляем отступ между изображением и кнопкой */
+    margin-bottom: 0px;
 }
 
 .centered-image img {
     max-width: 50%;
     max-height: 50%;
     display: inline-block;
-    transition: transform 0.2s ease; /* Добавляем плавную анимацию */
+    transition: transform 0.2s ease;
 }
 
-@media (max-width: 768px) { /* Медиа-запрос для экранов меньше 768px (типичный размер для мобильных устройств) */
+@media (max-width: 768px) {
     .centered-image img {
         margin-top: 10px; 
-        max-width: 90%; /* Уменьшаем максимальную ширину изображения до 80% ширины родительского элемента */
-        max-height: auto; /* Сбрасываем максимальную высоту для сохранения пропорций */
+        max-width: 90%;
+        max-height: auto;
     }
 }
 
-
-/* Стили для круглой кнопки */
 .rounded-button {
     display: inline-block;
     padding: 10px 20px;
@@ -99,7 +67,6 @@ html, body {
     font-weight: bold;
 }
 
-/* Анимация тряски изображения */
 .shake-image {
     animation: shake 0.3s ease-in-out;
 }
@@ -112,7 +79,6 @@ html, body {
     100% { transform: translateX(0); }
 }
 
-/* Стили для контейнера прогресс-бара */
 .progress-bar-container {
     position: fixed;
     right: 0;
@@ -132,51 +98,44 @@ html, body {
     background-color: #0f0;
     border-radius: 10px 0 0 10px;
     animation: progress-animation 10s linear;
-    box-shadow: 0 0 15px #0f0, 0 0 15px #0f0 inset; /* Добавляем неоновый эффект */
-    animation-fill-mode: forwards; /* Анимация закончится на последнем ключевом кадре и останется там */
-    animation-play-state: paused; /* Начнёт анимацию, когда будет активирована */
+    box-shadow: 0 0 15px #0f0, 0 0 15px #0f0 inset;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
-/* Стили для мобильных устройств */
 @media screen and (max-width: 480px) {
     .progress-bar-container {
-        height: 10px; /* Уменьшаем высоту */
-        border-radius: 5px; /* Меньший радиус границы */
-        bottom: -20px; /* Меньшее расстояние от нижнего края */
+        height: 10px;
+        border-radius: 5px;
+        bottom: -20px;
     }
 }
 
-/* Стили для планшетов */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .progress-bar-container {
-        height: 15px; /* Средняя высота */
-        border-radius: 7px; /* Средний радиус границы */
-        bottom: 15px; /* Среднее расстояние от нижнего края */
+        height: 15px;
+        border-radius: 7px;
+        bottom: 15px;
     }
 }
 
-/* Стили для десктопов, тут мы оставляем исходные размеры, указанные вами */
 @media screen and (min-width: 769px) {
     .progress-bar-container {
-        /* Ваши исходные стили */
         height: 20px;
         border-radius: 10px;
         bottom: 20px;
     }
 }
 
-
 @keyframes progress-animation {
     0% { width: 100%; }
     100% { width: 0; }
 }
 
-/* Стили для скрытого элемента */
 .hidden {
     display: none;
 }
 
-/* Стили для контейнера меню */
 .menu-container {
     display: flex;
     justify-content: center;
@@ -184,45 +143,89 @@ html, body {
     margin-top: 20px;
 }
 
-/* Стили для контейнера меню */
 .menu-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    position: relative; /* Для позиционирования разделителей */
+    position: relative;
 }
 
-/* Стили для кнопок меню */
 .menu-button {
-    padding: 30px 45px; /* Задаем паддинги для размера кнопок */
-    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для кнопок */
-    color: white; /* Цвет текста кнопок */
-    cursor: pointer; /* Курсор в виде руки, указывающий на возможность клика */
-    position: relative; /* Относительное позиционирование для абсолютно позиционированных детей */
-    display: flex; /* Использование flexbox для выравнивания контента */
-    align-items: center; /* Центрирование по вертикали внутри кнопки */
-    justify-content: center; /* Центрирование по горизонтали внутри кнопки */
-    flex-shrink: 0; /* Предотвращаем сжатие кнопок при уменьшении экрана */
+  padding: 30px 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Добавлено значение justify-content */
+  flex-shrink: 0;
 }
 
+
+.menu-button {
+    position: relative;
+}
+
+.menu-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+    .menu-label {
+        font-size: 0.6em;
+    }
+}
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.menu-button {
+  padding: 30px 45px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.menu-label {
+position: absolute;
+font-family: "Montserrat", sans-serif;
+bottom: 15px;
+left: 50%;
+transform: translateX(-50%);
+font-size: 0.8em;
+white-space: nowrap;
+color: hsla(0, 0%, 100%, 0.367);
+}
 
 /* Стили для разделителей */
 .menu-button:not(:last-child)::after {
     content: '';
-    height: 50%; /* Высота разделителя */
-    width: 1px; /* Ширина разделителя */
-    background-color: #ffffff0e; /* Цвет разделителя */
-    position: absolute; /* Абсолютное позиционирование */
-    right: 0; /* Располагаем разделитель с правой стороны кнопки */
-    top: 50%; /* Центрируем разделитель по вертикали */
-    transform: translateY(-50%); /* Смещаем разделитель на половину его высоты вверх для центрирования */
+    height: 50%;
+    width: 1px;
+    background-color: #ffffff0e;
+    position: absolute; 
+    right: 0; 
+    top: 50%; 
+    transform: translateY(-50%); 
 }
-
-/* Остальные стили без изменений */
-
-
-
 
 .menu-button:not(:last-child) {
     border-right: 2px solid transparent;
@@ -238,67 +241,62 @@ html, body {
     border-bottom-right-radius: 20px;
 }
 
-
-/* Стили для контейнера баланса */
 .balance-container {
-    display: inline-block; /* Чтобы текст с балансом был в той же строке, что и изображение */
-    vertical-align: middle; /* Выравнивание по вертикали */
-    font-size: 2rem; /* Размер шрифта баланса, можно настроить */
-    margin-left: 0px; /* Отступ слева от изображения */
+    display: inline-block; 
+    vertical-align: middle; 
+    font-size: 2rem; 
+    margin-left: 0px; 
     padding-right: 10px;
-    color: #ffffffea; /* Цвет текста */
+    color: #ffffffea; 
   }
-
+  
   .balance-container {
     -webkit-user-select: none;
-    -moz-user-select: none;
+    -moz-user-select: none; 
     -ms-user-select: none;
     user-select: none;
 }
 
-  /* Медиа-запросы для баланса и изображения */
 @media screen and (max-width: 480px) {
     .balance-image {
-      width: 50px; /* Уменьшенная ширина изображения на мобильных */
+      width: 50px; 
       padding-top: 7px;
       padding-right: 10px;
     }
     .balance-container {
-      font-size: 2rem; /* Уменьшенный размер шрифта на мобильных */
+      font-size: 2rem; 
     }
   }
   
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .balance-image {
-      width: 40px; /* Промежуточная ширина изображения на планшетах */
+      width: 40px; 
     }
     .balance-container {
-      font-size: 1.75rem; /* Промежуточный размер шрифта на планшетах */
+      font-size: 1.75rem; 
     }
   }
   
   @media screen and (min-width: 769px) {
     .balance-image {
-      width: 50px; /* Ширина изображения для десктопов */
+      width: 50px; 
     }
     .balance-container {
-      font-size: 2rem; /* Размер шрифта для десктопов */
+      font-size: 2rem; 
     }
   }
 
-/* Стили для абзаца с балансом */
 .balance-container p {
-    margin: -15px; /* Убираем внешние отступы у абзаца */
+    margin: -15px; 
 }
 
-/* Стили для баланса и изображения */
 .balance-wrapper {
-    text-align: center; /* Центрирование содержимого */
-    padding: 20px; /* Отступы вокруг блока */
-    position: absolute; /* Абсолютное позиционирование */
-    top: 70px; /* Перемещаем вверх страницы */
-    left: 50%; /* Центрирование по горизонтали */
-    transform: translateX(-50%); /* Коррекция позиционирования на половину ширины элемента */
+    text-align: center; 
+    padding: 20px; 
+    position: absolute; 
+    top: 70px; 
+    left: 50%; 
+    transform: translateX(-50%); 
   }
 
 @keyframes squeeze {
@@ -318,23 +316,16 @@ html, body {
   }
 
   #waitMessage {
-    position: fixed; /* Фиксированное позиционирование */
+    position: fixed; 
     font-family: Arial, Helvetica, sans-serif;
     top: 30px;
-    left: 50%; /* Центрирование по горизонтали */
+    left: 50%; 
     transform: translateX(-50%);
     font-size: 14px;
     padding: 10px 20px;
-    border-radius: 0 0 10px 10px; /* Скругление углов снизу */
-    color: hwb(0 100% 0% / 0.118); /* Цвет текста */
-    z-index: 1000; /* Убедитесь, что надпись видна над другими элементами */
-    display: none; /* Изначально скрыто */
-}
-
-.hidden {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    border-radius: 0 0 10px 10px; 
+    color: hwb(0 100% 0% / 0.118); 
+    z-index: 1000; 
+    display: none; 
 }
 
