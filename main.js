@@ -148,6 +148,36 @@ document.querySelector('.centered-container').addEventListener('click', function
     // Остальной код для обработки клика (если нужно)
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var centeredContainer = document.querySelector('.centered-container');
+    var tapWords = ['Мел', 'Дай', 'Деньги']; // Массив слов для повторяющегося порядка
+
+    centeredContainer.addEventListener('click', function(event) {
+        // Создаем элемент для слова
+        var tapText = document.createElement('div');
+        var currentWord = tapWords.shift(); // Получаем первое слово из массива
+        tapWords.push(currentWord); // Перемещаем первое слово в конец массива
+        tapText.textContent = currentWord;
+        tapText.classList.add('tap-text');
+
+        // Добавляем стили для слова
+        tapText.style.position = 'absolute';
+        tapText.style.top = event.clientY + 'px';
+        tapText.style.left = event.clientX + 'px';
+
+        // Добавляем слово в контейнер
+        document.body.appendChild(tapText);
+
+        // Добавляем класс анимации для слова
+        tapText.classList.add('fly-up');
+
+        // Через некоторое время убираем слово
+        setTimeout(function() {
+            document.body.removeChild(tapText);
+        }, 2000);
+    });
+});
+
 
 
 
