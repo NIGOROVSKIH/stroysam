@@ -149,15 +149,6 @@ document.querySelector('.centered-container').addEventListener('click', function
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    var clickSound = document.getElementById("clickSound");
-
-    // Добавляем обработчик клика для проигрывания звука
-    document.querySelector('.centered-container').addEventListener('click', function(event) {
-        clickSound.currentTime = 0; // Обнуляем время воспроизведения, чтобы снова проиграть звук с начала
-        clickSound.play(); // Проигрываем звук
-    });
-});
 
 
 
