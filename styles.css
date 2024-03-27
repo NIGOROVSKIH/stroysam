@@ -31,11 +31,13 @@ html, body {
 
 .centered-container {
     text-align: center;
+    touch-action: none;
 }
 
 .centered-image {
     display: inline-block;
     margin-bottom: 0px;
+    touch-action: none;
 }
 
 .centered-image img {
@@ -43,6 +45,7 @@ html, body {
     max-height: 50%;
     display: inline-block;
     transition: transform 0.2s ease;
+    touch-action: none;
 }
 
 @media (max-width: 768px) {
@@ -50,6 +53,7 @@ html, body {
         margin-top: 10px; 
         max-width: 90%;
         max-height: auto;
+        touch-action: none;
     }
 }
 
