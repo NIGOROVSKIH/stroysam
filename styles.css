@@ -17,21 +17,25 @@ body {
 
 html, body {
     overflow: hidden;
+    touch-action: none;
 }
 
 .balance-image-container {
     display: inline-block;
     vertical-align: middle;
+    touch-action: none;
   }
 
 .balance-image {
     width: 50px;
     height: auto;
+    touch-action: none;
   }
 
 .centered-container {
     text-align: center;
     touch-action: none;
+    
 }
 
 .centered-image {
@@ -94,6 +98,7 @@ html, body {
     border-radius: 10px;
     overflow: hidden;
     z-index: 999;
+    touch-action: none;
 }
 
 .progress-bar {
@@ -105,6 +110,7 @@ html, body {
     box-shadow: 0 0 15px #0f0, 0 0 15px #0f0 inset;
     animation-fill-mode: forwards;
     animation-play-state: paused;
+    touch-action: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -112,6 +118,7 @@ html, body {
         height: 10px;
         border-radius: 5px;
         bottom: -20px;
+        touch-action: none;
     }
 }
 
@@ -120,6 +127,7 @@ html, body {
         height: 15px;
         border-radius: 7px;
         bottom: 15px;
+        touch-action: none;
     }
 }
 
@@ -128,6 +136,7 @@ html, body {
         height: 20px;
         border-radius: 10px;
         bottom: 20px;
+        touch-action: none;
     }
 }
 
@@ -138,6 +147,7 @@ html, body {
 
 .hidden {
     display: none;
+    touch-action: none;
 }
 
 .menu-container {
@@ -145,6 +155,7 @@ html, body {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    touch-action: none;
 }
 
 .menu-container {
@@ -153,6 +164,7 @@ html, body {
     align-items: center;
     margin-top: 20px;
     position: relative;
+    touch-action: none;
 }
 
 .menu-button {
@@ -165,11 +177,14 @@ html, body {
   align-items: center;
   justify-content: center; /* Добавлено значение justify-content */
   flex-shrink: 0;
+  touch-action: none;
+    
 }
 
 
 .menu-button {
     position: relative;
+    touch-action: none;
 }
 
 .menu-label {
@@ -179,6 +194,7 @@ html, body {
     transform: translateX(-50%);
     font-size: 0.8em;
     white-space: nowrap;
+    touch-action: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -192,6 +208,7 @@ html, body {
   align-items: center;
   margin-top: 20px;
   position: relative;
+  touch-action: none;
 }
 
 .menu-button {
@@ -204,6 +221,7 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  touch-action: none;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -217,6 +235,7 @@ transform: translateX(-50%);
 font-size: 0.8em;
 white-space: nowrap;
 color: hsla(0, 0%, 100%, 0.367);
+touch-action: none;
 }
 
 /* Стили для разделителей */
@@ -229,6 +248,7 @@ color: hsla(0, 0%, 100%, 0.367);
     right: 0; 
     top: 50%; 
     transform: translateY(-50%); 
+    
 }
 
 .menu-button:not(:last-child) {
