@@ -5,15 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Функция для отмены стандартного поведения событий касания
-function preventTouchZoom(event) {
-    if (event.touches.length > 1) {
-        // Отменяет событие, если оно отменяемо, без остановки дальнейшего распространения этого события
-        event.preventDefault();
-    }
-}
-
-
 
 // Добавление слушателя событий к document для отслеживания событий касания
 document.addEventListener('touchstart', preventTouchZoom, { passive: false });
