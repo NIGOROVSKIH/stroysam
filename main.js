@@ -6,19 +6,31 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    let loadPercent = 0;
-    const interval = setInterval(function() {
-        loadPercent += 1;
-        document.getElementById("loadingText").textContent = `Загрузка... ${loadPercent}%`;
-        if (loadPercent >= 100) {
-            clearInterval(interval);
-            document.getElementById("loadingScreen").style.opacity = 0;
-            setTimeout(function() {
-                document.getElementById("loadingScreen").style.display = "none";
-            }, 500); // Плавно скрываем экран загрузки
-        }
-    }, 40); // Обновляем процент загрузки каждые 40 мс, что дает примерно 4 секунды до 100%
+    const lastLoadTime = localStorage.getItem('lastLoadTime');
+    const currentTime = new Date().getTime();
+
+    // Проверяем, был ли показ экрана загрузки более 30 минут назад
+    if (!lastLoadTime || currentTime - lastLoadTime > 1800000) { // 1800000 мс = 30 минут
+        let loadPercent = 0;
+        const interval = setInterval(function() {
+            loadPercent += 1;
+            document.getElementById("loadingText").textContent = `Загрузка... ${loadPercent}%`;
+            if (loadPercent >= 100) {
+                clearInterval(interval);
+                document.getElementById("loadingScreen").style.opacity = 0;
+                setTimeout(function() {
+                    document.getElementById("loadingScreen").style.display = "none";
+                }, 500); // Плавно скрываем экран загрузки
+                // Сохраняем текущее время как время последнего показа экрана загрузки
+                localStorage.setItem('lastLoadTime', currentTime.toString());
+            }
+        }, 40); // Обновляем процент загрузки каждые 40 мс, что дает примерно 4 секунды до 100%
+    } else {
+        // Если экран загрузки уже показывался в течение последних 30 минут, сразу скрываем его
+        document.getElementById("loadingScreen").style.display = "none";
+    }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
