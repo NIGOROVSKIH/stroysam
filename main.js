@@ -186,7 +186,7 @@ document
 
 document.addEventListener("DOMContentLoaded", function () {
   var centeredContainer = document.querySelector(".centered-container");
-  var imageSources = ["bomba.png", "ledi.png", "candy.webp"];
+  var imageSources = ["moneypng.webp", "moneypng.webp", "moneypng.webp"];
 
   centeredContainer.addEventListener("click", function (event) {
     var tapImage = document.createElement("img");
