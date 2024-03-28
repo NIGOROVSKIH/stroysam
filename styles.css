@@ -68,11 +68,13 @@ html, body {
     background-color: blue;
     text-decoration: none;
     overflow: hidden;
+    touch-action: none;
 }
 
 .button-text {
     color: white;
-    font-weight: bold;
+    font-weight: bold; 
+    touch-action: none;
 }
 
 .shake-image {
@@ -200,6 +202,7 @@ html, body {
 @media screen and (max-width: 480px) {
     .menu-label {
         font-size: 0.6em;
+        touch-action: none;
     }
 }
 .menu-container {
@@ -248,21 +251,25 @@ touch-action: none;
     right: 0; 
     top: 50%; 
     transform: translateY(-50%); 
+    touch-action: none;
     
 }
 
 .menu-button:not(:last-child) {
     border-right: 2px solid transparent;
+    touch-action: none;
 }
 
 .menu-button:first-child {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    touch-action: none;
 }
 
 .menu-button:last-child {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    touch-action: none;
 }
 
 .balance-container {
@@ -272,6 +279,7 @@ touch-action: none;
     margin-left: 0px; 
     padding-right: 10px;
     color: #ffffffea; 
+    touch-action: none;
   }
   
   .balance-container {
@@ -279,6 +287,7 @@ touch-action: none;
     -moz-user-select: none; 
     -ms-user-select: none;
     user-select: none;
+    touch-action: none;
 }
 
 @media screen and (max-width: 480px) {
@@ -286,32 +295,39 @@ touch-action: none;
       width: 50px; 
       padding-top: 7px;
       padding-right: 10px;
+      touch-action: none;
     }
     .balance-container {
       font-size: 2rem; 
+      touch-action: none;
     }
   }
   
   @media screen and (min-width: 481px) and (max-width: 768px) {
     .balance-image {
       width: 40px; 
+      touch-action: none;
     }
     .balance-container {
-      font-size: 1.75rem; 
+      font-size: 1.75rem;
+      touch-action: none;
     }
   }
   
   @media screen and (min-width: 769px) {
     .balance-image {
       width: 50px; 
+      touch-action: none;
     }
     .balance-container {
       font-size: 2rem; 
+      touch-action: none;
     }
   }
 
 .balance-container p {
     margin: -15px; 
+    touch-action: none;
 }
 
 .balance-wrapper {
@@ -321,6 +337,7 @@ touch-action: none;
     top: 70px; 
     left: 50%; 
     transform: translateX(-50%); 
+    touch-action: none;
   }
 
 @keyframes squeeze {
@@ -351,6 +368,7 @@ touch-action: none;
     color: hwb(0 100% 0% / 0.118); 
     z-index: 1000; 
     display: none; 
+    touch-action: none;
 }
 
 .tap-image {
@@ -359,6 +377,7 @@ touch-action: none;
   height: auto; /* Автоматический подбор высоты */
   position: absolute;
   z-index: 9999; /* Устанавливаем высокий z-index, чтобы изображения были поверх других элементов */
+  touch-action: none;
 }
 
 @keyframes flyUp {
