@@ -15,6 +15,24 @@ body {
     touch-action: none;
 }
 
+#loadingScreen {
+    background-image: url('IMG_5250.JPG'); /* Укажите путь к вашему изображению */
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#loadingText {
+    animation: blink 1s infinite;
+    color: white; /* Или любой цвет, который будет хорошо виден на вашем изображении */
+}
+
+
 html, body {
     overflow: hidden;
     touch-action: none;
