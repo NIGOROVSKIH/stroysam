@@ -6,12 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Добавление слушателя событий к document для отслеживания событий касания
-document.addEventListener('touchstart', preventTouchZoom, { passive: false });
-document.addEventListener('touchmove', preventTouchZoom, { passive: false });
-document.addEventListener('touchend', preventTouchZoom, { passive: false });
-
-
     
 document.addEventListener("DOMContentLoaded", function() {
     // Проверяем, была ли смена изображения
