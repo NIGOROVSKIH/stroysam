@@ -13,6 +13,20 @@ function preventTouchZoom(event) {
     }
 }
 
+let lastTapTime = 0;
+
+function preventDoubleTapZoom(event) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTapTime;
+    if (tapLength < 500 && tapLength > 0) {
+        event.preventDefault();
+    }
+    lastTapTime = currentTime;
+}
+
+document.addEventListener('touchend', preventDoubleTapZoom, { passive: false });
+
+
 // Добавление слушателя событий к document для отслеживания событий касания
 document.addEventListener('touchstart', preventTouchZoom, { passive: false });
 document.addEventListener('touchmove', preventTouchZoom, { passive: false });
