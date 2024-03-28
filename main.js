@@ -5,6 +5,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    let loadPercent = 0;
+    const interval = setInterval(function() {
+        loadPercent += 1;
+        document.getElementById("loadingText").textContent = `Загрузка... ${loadPercent}%`;
+        if (loadPercent >= 100) {
+            clearInterval(interval);
+            document.getElementById("loadingScreen").style.opacity = 0;
+            setTimeout(function() {
+                document.getElementById("loadingScreen").style.display = "none";
+            }, 500); // Плавно скрываем экран загрузки
+        }
+    }, 40); // Обновляем процент загрузки каждые 40 мс, что дает примерно 4 секунды до 100%
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   if (localStorage.getItem("imageChanged") === "true") {
     document.querySelector(".centered-image img").src =
